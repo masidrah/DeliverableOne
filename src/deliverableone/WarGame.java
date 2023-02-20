@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author sidrahmalik!!
+ * @author sidrahmalik
  */
 public class WarGame extends Game{
     private GroupOfCards deck;
@@ -24,12 +24,6 @@ public WarGame() {
 super("War");
 }
 
-/**
-* Creates an ArrayList using the player controlled object and the computer controlled object.
-* This method ensures that the game is limited to 1 player and 1 computer.
-*
-* @param user
-*/
 public void createPlayerList(Player user) {
 Player computer = new WarPlayer("Computer");
 ArrayList<Player> playerList = new ArrayList<Player>();
@@ -49,7 +43,7 @@ deck = new GroupOfCards(cardsInDeck);
 // Populates the deck of cards, 4 suits and 13 cards for each suit
 for (int r = 1; r < 14; r++) {
 for (int c = 0; c < 4; c++) {
-deck.getCardDeck().add(new Card(r, Card.suits[c]));
+deck.getCards().add(new Card(r, Card.suits[c]));
 }
 }
 // Call shuffle method from GroupOfCards and shuffle deck
@@ -61,19 +55,19 @@ ArrayList<Card> computerCards = new ArrayList<>();
 
 
 // Even cards are added to user ArrayList, odd cards are added to computer ArrayList
-for (int i = 0; i < deck.getCardDeck().size(); i++) {
+for (int i = 0; i < deck.getCards().size(); i++) {
 if (i % 2 == 0) {
-userCards.add(deck.getCardDeck().get(i));
+userCards.add(deck.getCards().get(i));
 } else {
-computerCards.add(deck.getCardDeck().get(i));
+computerCards.add(deck.getCards().get(i));
 }
 }
 // Create 2 GroupOfCards deck objects using the size of the 2 ArrayLists
 GroupOfCards playerDeck = new GroupOfCards(userCards.size());
 GroupOfCards computerDeck = new GroupOfCards(computerCards.size());
 // Set the cards in these GroupOfCards objects to the ones that were placed in the 2 ArrayLists earlier
-playerDeck.setCardDeck(userCards);
-computerDeck.setCardDeck(computerCards);
+playerDeck.setCards(userCards);
+computerDeck.setCards(computerCards);
 // Give the 2 GroupsOfCards to the player objects
 Player1.setCards(playerDeck);
 Computer.setCards(computerDeck);
