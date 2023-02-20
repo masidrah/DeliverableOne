@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author sidrahmalik
+ * @author sidrahmalik!
  */
 public class WarGame extends Game{
     private GroupOfCards deck;
