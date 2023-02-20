@@ -6,7 +6,7 @@ package deliverableone;
 
 /**
  *
- * @author sidrahmalik!
+ * @author sidrahmalik
  */
 public abstract class Player {
 
